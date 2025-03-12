@@ -8,6 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.splashfanatiz.ui.screen.FanatizScreen
 import com.example.splashfanatiz.ui.screen.MainScreen
 import com.example.splashfanatiz.ui.screen.SplashScreen
+import com.example.splashfanatiz.ui.screen.RegisterScreen
 
 @Composable
 fun AppNavigation(){
@@ -24,7 +25,10 @@ fun AppNavigation(){
             MainScreen()
         }
         composable(AppScreens.FanatizScreen.router) {
-            FanatizScreen()
+            FanatizScreen(navController)
+        }
+        composable(AppScreens.RegisterScreen.router) {
+            RegisterScreen()
         }
     }
 

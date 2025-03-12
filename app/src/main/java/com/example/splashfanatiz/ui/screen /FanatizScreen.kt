@@ -22,26 +22,32 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.splashfanatiz.R
 
 @Composable
-fun FanatizScreen(){
+fun FanatizScreen(navController: NavController){
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF1C1B2B)),
-        contentAlignment = Alignment.Center
+            .background(Color(0xFF1C1B2C)),
+        contentAlignment = Alignment.TopCenter
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Top,
             modifier = Modifier.padding(16.dp)
+                .fillMaxSize()
+                .padding(16.dp)
         ) {
+            Spacer(modifier = Modifier.height(40.dp))
             Image(
                 painter = painterResource(id = R.drawable.fanatiz_image), // Imagen de recurso
                 contentDescription = "Fanatiz Image",
@@ -50,14 +56,16 @@ fun FanatizScreen(){
                     .clip(CircleShape)
             )
 
+            Spacer(modifier = Modifier.height(16.dp)) // Espacio entre la imagen y el texto
+
             Image(
-                painter = painterResource(id = R.drawable.banner1), // Imagen de recurso
+                painter = painterResource(id = R.drawable.banner_image), // Imagen de recurso
                 contentDescription = "Fanatiz Banner",
                 modifier = Modifier
                     .size(180.dp)
                     .clip(CircleShape)
             )
-            Spacer(modifier = Modifier.height(24.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
             Text(
                 text = "Mira en vivo el deporte que amas",
@@ -80,8 +88,9 @@ fun FanatizScreen(){
             Spacer(modifier = Modifier.height(32.dp))
 
             Button(
-                onClick = { /* Acción del botón */ },
-                colors = ButtonDefaults.buttonColors( Color(0xFFFF3D00) ),
+                onClick = { navController.navigate("register_screen") }, // Navega a RegisterScreen
+                colors = ButtonDefaults.buttonColors( Color(0xFFD90F0C) ),
+                shape = RectangleShape,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
@@ -100,6 +109,6 @@ fun FanatizScreen(){
 
 @Preview(showBackground = true)
 @Composable
-fun FanatizScreenPreview(){
-    FanatizScreen()
+fun FanatizScreenPreview(navController: NavController){
+    FanatizScreen(navController)
 }
