@@ -110,7 +110,7 @@ fun RegisterScreen() {
         Spacer(modifier = Modifier.height(16.dp))
 
         Text(
-            text = "Al registrarte estás aceptando nuestros términos y condiciones y políticas de privacidad",
+            text = "Al registrarte estás aceptando nuestros términos y condiciones y políticas de privacidad.",
             style = MaterialTheme.typography.labelMedium
         )
     }
