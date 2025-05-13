@@ -138,9 +138,9 @@ fun RegisterSocialMediaScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            // Botón de registro
+            // Botón de Notificaciones
             OutlinedButton(
-                onClick = { /* Acción */ },
+                onClick = { navController.navigate("register_screen") }, // Navega a la pantalla de registro
                 colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White),
                 border = BorderStroke(1.dp, Color(0xFFD90F0C)),
                 shape = RoundedCornerShape(8.dp),
@@ -149,6 +149,32 @@ fun RegisterSocialMediaScreen(navController: NavController) {
                     .height(50.dp)
             ) {
                 Text(text = "Regístrate", color = Color(0xFFD90F0C))
+            }
+
+            // Botón de Notificaciones
+            OutlinedButton(
+                onClick = { navController.navigate("notificaciones_screen") }, // Navega a la pantalla de notificaciones
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White),
+                border = BorderStroke(1.dp, Color(0xFFD90F0C)),
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+            ) {
+                Text(text = "Notificaciones", color = Color(0xFFD90F0C))
+            }
+
+            // Botón de Tarjetas
+            OutlinedButton(
+                onClick = { navController.navigate("card_screen") }, // Navega a la pantalla de Tarjetas
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = Color.White),
+                border = BorderStroke(1.dp, Color(0xFFD90F0C)),
+                shape = RoundedCornerShape(8.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+            ) {
+                Text(text = "Tarjetas", color = Color(0xFFD90F0C))
             }
         }
     }

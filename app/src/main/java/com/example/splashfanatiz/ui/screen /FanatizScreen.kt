@@ -88,7 +88,7 @@ fun FanatizScreen(navController: NavController){
             Spacer(modifier = Modifier.height(32.dp))
 
             Button(
-                onClick = { navController.navigate("register_screen") }, // Navega a RegisterScreen
+                onClick = { navController.navigate("register_social_media_screen") }, // Navega a RegisterScreen
                 colors = ButtonDefaults.buttonColors( Color(0xFFD90F0C) ),
                 shape = RectangleShape,
                 modifier = Modifier
